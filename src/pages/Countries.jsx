@@ -22,7 +22,8 @@ function Countries() {
     }
   };
 
-  const goToCountryDetail = (countryId) => {
+  const goToCountryDetail = (countryId, countryName) => {
+    localStorage.setItem('country', countryName);
     navigate(`/country/${countryId}`);
   }
 
@@ -37,14 +38,14 @@ function Countries() {
         <Loader />
       ) : (
         <div className="p-3">
-          <p className="my-3 text-center text-3xl text-gray-700">Countries</p>
+          <p className="my-3 bg-violet-100 text-center text-3xl text-gray-700">Countries</p>
           <div className="grid grid-cols-6 gap-4">
             {countries.length &&
               countries.map((item, index) => (
                 <p
                   key={index}
                   className="text-gray-900 p-1 cursor-pointer shadow-2xl rounded bg-red-300 whitespace-no-wrap text-center"
-                  onClick={() => goToCountryDetail(item.iso2)}
+                  onClick={() => goToCountryDetail(item.iso2, item.name)}
                 >
                   {item.name}
                 </p>

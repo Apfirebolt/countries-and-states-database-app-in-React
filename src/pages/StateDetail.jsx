@@ -5,6 +5,8 @@ import Loader from '../components/Loader'
 
 function StateDetail() {
   const [cities, setCities] = useState([]);
+  const [state, setState] = useState('');
+  const [country, setCountry] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
@@ -24,6 +26,17 @@ function StateDetail() {
   };
 
   useEffect(() => {
+    const currentState = localStorage.getItem('state');
+    const currentCountry = localStorage.getItem('country');
+
+    if (currentCountry) {
+      setCountry(currentCountry)
+    }
+
+    if (currentState) {
+      setState(currentState)
+    }
+
     getCities();
     // eslint-disable-next-line
   }, []);
@@ -34,7 +47,7 @@ function StateDetail() {
         <Loader />
       ) : (
         <div className="p-3">
-          <p className="my-3 text-center text-3xl text-gray-700">Cities for - Country ID - {params.countryId} State ID - {params.stateId} </p>
+          <p className="my-3 text-center text-3xl text-gray-700">Cities for {state} in {country}</p>
           <div className="grid grid-cols-6 gap-4">
             {cities.length &&
               cities.map((item, index) => (
