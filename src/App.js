@@ -15,8 +15,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/countries' element={<Countries />} />
-            <Route path='/:stateId' element={<StateDetail />} />
-            <Route path='/:countryId' element={<CountryDetail />} />
+            <Route path='/:countryId/state/:stateId' element={<StateDetail />} />
+            <Route path='/country/:countryId' element={<CountryDetail />} />
           </Routes>
           <Footer />
         </div>

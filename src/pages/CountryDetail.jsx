@@ -1,23 +1,59 @@
-import { useEffect, useState } from 'react'
-import { FaPlus } from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import httpClient from "../plugins/interceptor.js";
 
 function CountryDetail() {
-  
-  const navigate = useNavigate()
+  const [states, setStates] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const params = useParams();
+
+  const headers = {
+    "X-CSCAPI-KEY": process.env.REACT_APP_API_KEY,
+  };
+  const getStates = async () => {
+    setIsLoading(true);
+    const response = await httpClient.get(`countries/${params.countryId}/states`, {
+      headers: headers,
+    });
+    if (response) {
+      setIsLoading(false);
+      setStates(response);
+    }
+  };
+
+  const goToStateDetail = (stateId) => {
+    navigate(`/${params.countryId}/state/${stateId}`);
+  }
 
   useEffect(() => {
-    console.log('API to be called here')
+    getStates();
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
-    <div className='ticket-page'>
-      <p>
-          CountryDetail Page
-      </p>
+    <div className="countries-page">
+      {isLoading ? (
+        <p>Loading ...</p>
+      ) : (
+        <div className="p-3">
+          <p className="my-3 text-center text-3xl text-gray-700">States for - {params.countryId}</p>
+          <div className="grid grid-cols-6 gap-4">
+            {states.length &&
+              states.map((item, index) => (
+                <p
+                  key={index}
+                  className="text-gray-900 p-1 cursor-pointer shadow-2xl rounded bg-red-300 whitespace-no-wrap text-center"
+                  onClick={() => goToStateDetail(item.iso2)}
+                >
+                  {item.name}
+                </p>
+              ))}
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default CountryDetail
+export default CountryDetail;

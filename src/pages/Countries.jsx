@@ -22,7 +22,7 @@ function Countries() {
   };
 
   const goToCountryDetail = (countryId) => {
-    navigate(`/${countryId}`);
+    navigate(`/country/${countryId}`);
   }
 
   useEffect(() => {
