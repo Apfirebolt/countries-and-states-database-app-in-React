@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import httpClient from "../plugins/interceptor.js";
+import Loader from '../components/Loader'
 
 function StateDetail() {
   const [cities, setCities] = useState([]);
@@ -30,7 +31,7 @@ function StateDetail() {
   return (
     <div className="cities-page">
       {isLoading ? (
-        <p>Loading ...</p>
+        <Loader />
       ) : (
         <div className="p-3">
           <p className="my-3 text-center text-3xl text-gray-700">Cities for - Country ID - {params.countryId} State ID - {params.stateId} </p>

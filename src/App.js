@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className='container'>
+        <div className='container bg-orange-100'>
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
