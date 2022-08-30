@@ -1,43 +1,32 @@
-![stronghold logo](screenshots/countries.png)
+**Flowbite Countries - Database for countries, cities and states**
 
-[![Downloads](http://pepy.tech/badge/stronghold)](http://pepy.tech/count/stronghold)
+![Countries_Logo](screenshots/countries.png)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-`stronghold` is the easiest way to securely configure your Mac.
+`Flowbite Countries` displays a huge list of states and cities from different countries around the world.
 
-![GIF demo](img/demo.gif)
+**Features**
 
-Designed for macOS Sierra and High Sierra. *Not yet tested on macOS Mojave, but I'm working on updating it!*
-
-**Usage**
----
-
-```
-Usage: stronghold.py [OPTIONS]
-
-  Securely configure your Mac.
-  Developed by Aaron Lichtman -> (Github: alichtman)
-
-
-Options:
-  -lockdown  Set secure configuration without user interaction.
-  -v         Display version and author information and exit.
-  -help, -h  Show this message and exit.
-```
+- Huge database from the API provides data for 220+ countries, 70000 + cities and 5000 + states
+- Flowbite UI is used for attractive loaders, navbars and more.
+- Tailwind CSS is used for utility classes within the app.
 
 **Installation Options**
 ---
 
-1. Install with [`pip`](https://pypi.org/project/stronghold/)
-    + `$ pip install stronghold`
-    + `$ stronghold`
+1. Install with npm
+    + `$ npm install`
+    + `$ npm start`
+    + `$ npm build`
 
-2. Download the `stronghold` binary from Releases tab.
 
-
-**Configuration Options**
+**API Config**
 ---
 
-1. Firewall
+1. Get API Key
 
     + Turn on Firewall?
         - This helps protect your Mac from being attacked over the internet.
@@ -46,7 +35,7 @@ Options:
     + Turn on stealth mode?
         - Your Mac will not respond to ICMP ping requests or connection attempts from closed TCP and UDP networks.
 
-2. General System Protection
+2. Put the API Key in the .env file
 
     + Enable Gatekeeper?
     	- Defend against malware by enforcing code signing and verifying downloaded applications before allowing them to run.
@@ -55,110 +44,15 @@ Options:
     + Disable Captive Portal Assistant and force login through browser on untrusted networks?
         - Captive Portal Assistant could be triggered and direct you to a malicious site WITHOUT any user interaction.
 
-3. User Metadata Storage
-
-    + Clear language modeling metadata?
-        - This includes user spelling, typing and suggestion data.
-    + Disable language modeling data collection?
-    + Clear QuickLook metadata?
-    + Clear Downloads metadata?
-    + Disable metadata collection from Downloads?
-    + Clear SiriAnalytics database?
-
-4. User Safety
-
-    + Lock Mac as soon as screen saver starts?
-    + Display all file extensions?
-    	- This prevents malware from disguising itself as another file type.
-    + Disable saving documents to the cloud by default?
-        - This prevents sensitive documents from being unintentionally stored on the cloud.
-    + Show hidden files in Finder?
-    	- This lets you see all files on the system without having to use the terminal.
-    + Disable printer sharing?
-        - Offers redundancy in case the Firewall was not configured.
-
 **How to Contribute**
 ---
 
-1. Clone repo and create a new branch: `$ git checkout https://github.com/alichtman/stronghold -b name_for_new_branch`.
+1. Clone repo and create a new branch: `$ git checkout https://github.com/Apfirebolt/countries-and-states-database-app-in-React -b name_for_new_branch`.
 2. Make changes and test
 3. Submit Pull Request with comprehensive description of changes
 
 **Acknowledgements**
 ---
 
-+ [@shobrook](https://www.github.com/shobrook) for logo and UI design assistance.
-+ Base logo vector made by [Freepik](https://www.freepik.com/) from [Flaticon](www.flaticon.com).
-+ [drduh's macOS-Security-and-Privacy-Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) and [Jonathan Levin's MacOS Security Guide](http://newosxbook.com/files/moxii3/AppendixA.pdf) were incredibly helpful while I was building `stronghold`.
++ [Darshan Gada](https://github.com/dr5hn) for creating and maintaining this awesome API.
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
