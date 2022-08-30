@@ -1,12 +1,28 @@
-
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Countries from './pages/Countries'
+import StateDetail from './pages/StateDetail'
+import CountryDetail from './pages/CountryDetail'
 
 function App() {
   return (
-    <div className="App">
-      <p className='text-2xl text-red-300'>This is my project</p>
-    </div>
-  );
+    <>
+      <Router>
+        <div className='container'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/countries' element={<Countries />} />
+            <Route path='/:stateId' element={<StateDetail />} />
+            <Route path='/:countryId' element={<CountryDetail />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </>
+  )
 }
 
-export default App;
+export default App
