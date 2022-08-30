@@ -55,6 +55,11 @@ State detail page for a given state and country would display all the cities loc
 2. Make changes and test
 3. Submit Pull Request with comprehensive description of changes
 
+**Time Taken**
+---
+
+The project took around 3 and half hours to complete from designing to analyzing API docs, creating UI and integrating APIs.
+
 **Acknowledgements**
 ---
 
