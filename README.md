@@ -1,6 +1,9 @@
-**Flowbite Countries - Database for countries, cities and states**
+## Flowbite Countries - Database for countries, cities and states 
 
 ![Countries_Logo](screenshots/countries.png)
+
+### Tech Stack
+
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -26,23 +29,25 @@
 **API Config**
 ---
 
+**Screenshots**
+---
+
+Country detail page which displays all the states of the given country.
+
+![Countries_Logo](screenshots/states.png)
+
+State detail page for a given state and country would display all the cities located in the state and available in the database.
+
+![States_Logo](screenshots/cities.png)
+
 1. Get API Key
 
-    + Turn on Firewall?
-        - This helps protect your Mac from being attacked over the internet.
-    + Turn on logging?
-        - If there IS an infection, logs are useful for determining the source.
-    + Turn on stealth mode?
-        - Your Mac will not respond to ICMP ping requests or connection attempts from closed TCP and UDP networks.
-
-2. Put the API Key in the .env file
-
-    + Enable Gatekeeper?
-    	- Defend against malware by enforcing code signing and verifying downloaded applications before allowing them to run.
-    + Prevent automatic software whitelisting?
-        - Both built-in and downloaded software will require user approval for whitelisting.
-    + Disable Captive Portal Assistant and force login through browser on untrusted networks?
-        - Captive Portal Assistant could be triggered and direct you to a malicious site WITHOUT any user interaction.
+    + Go to this website - https://countrystatecity.in/
+        - Request for an API key, you should have it in your mail in around 2 days.
+    + Read the docs
+        - Read the docs to get the grasp of API end-points and response received.
+    + Use it in your app
+        - Use it in your app through the env file. Append this in request headers while making API calls.
 
 **How to Contribute**
 ---
