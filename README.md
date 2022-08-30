@@ -20,14 +20,13 @@
 **Installation Options**
 ---
 
+Just like you install majority of the Node powered front-end apps, three magic commands for you to run the app.
+
 1. Install with npm
     + `$ npm install`
     + `$ npm start`
     + `$ npm build`
 
-
-**API Config**
----
 
 **Screenshots**
 ---
