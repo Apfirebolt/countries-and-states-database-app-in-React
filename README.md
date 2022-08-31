@@ -16,6 +16,7 @@
 - Huge database from the API provides data for 220+ countries, 70000 + cities and 5000 + states
 - Flowbite UI is used for attractive loaders, navbars and more.
 - Tailwind CSS is used for utility classes within the app.
+- Search filtering added.
 
 **Installation Options**
 ---

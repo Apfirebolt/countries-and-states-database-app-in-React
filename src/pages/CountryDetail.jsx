@@ -6,6 +6,7 @@ import Loader from '../components/Loader'
 function CountryDetail() {
   const [states, setStates] = useState([]);
   const [country, setCountry] = useState([]);
+  const [searchText, setSearchText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
@@ -29,6 +30,16 @@ function CountryDetail() {
     navigate(`/${params.countryId}/state/${stateId}`);
   }
 
+  const filterStates = () => {
+    if (searchText) {
+      return states.filter((item) => {
+        return item.name.indexOf(searchText) !== -1;
+      });
+    } else {
+      return states;
+    }
+  };
+
   useEffect(() => {
     const currentCountry = localStorage.getItem('country');
 
@@ -47,9 +58,25 @@ function CountryDetail() {
       ) : (
         <div className="p-3">
           <p className="my-3 text-center text-3xl text-gray-700">States for - {country}</p>
+          <div class="mb-6">
+            <label
+              for="searchInput"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Search State
+            </label>
+            <input
+              type="text"
+              id="searchInput"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search States here"
+              onChange={(e) => setSearchText(e.target.value)}
+              required
+            />
+          </div>
           <div className="grid grid-cols-6 gap-4">
             {states.length &&
-              states.map((item, index) => (
+              filterStates().map((item, index) => (
                 <p
                   key={index}
                   className="text-gray-900 p-1 cursor-pointer shadow-2xl rounded bg-red-300 whitespace-no-wrap text-center"

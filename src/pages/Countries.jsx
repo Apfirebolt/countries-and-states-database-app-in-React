@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import httpClient from "../plugins/interceptor.js";
-import Loader from '../components/Loader'
+import Loader from "../components/Loader";
 
 function Countries() {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchText, setSearchText] = useState('');
   const navigate = useNavigate();
 
   const headers = {
@@ -23,9 +24,19 @@ function Countries() {
   };
 
   const goToCountryDetail = (countryId, countryName) => {
-    localStorage.setItem('country', countryName);
+    localStorage.setItem("country", countryName);
     navigate(`/country/${countryId}`);
-  }
+  };
+
+  const filterCountries = () => {
+    if (searchText) {
+      return countries.filter((item) => {
+        return item.name.indexOf(searchText) !== -1;
+      });
+    } else {
+      return countries;
+    }
+  };
 
   useEffect(() => {
     getCountries();
@@ -38,10 +49,26 @@ function Countries() {
         <Loader />
       ) : (
         <div className="p-3">
-          <p className="my-3 bg-violet-100 text-center text-3xl text-gray-700">Countries</p>
+          <p className="my-3 text-center text-3xl text-gray-700">Countries</p>
+          <div class="mb-6">
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >
+              Search Country
+            </label>
+            <input
+              type="text"
+              id="searchInput"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search Countries here"
+              onChange={(e) => setSearchText(e.target.value)}
+              required
+            />
+          </div>
           <div className="grid grid-cols-6 gap-4">
             {countries.length &&
-              countries.map((item, index) => (
+              filterCountries().map((item, index) => (
                 <p
                   key={index}
                   className="text-gray-900 p-1 cursor-pointer shadow-2xl rounded bg-red-300 whitespace-no-wrap text-center"
