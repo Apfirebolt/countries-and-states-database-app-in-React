@@ -28,6 +28,9 @@ Just like you install majority of the Node powered front-end apps, three magic c
     + `$ npm start`
     + `$ npm build`
 
+2. Install through Docker
+    + `$ sudo docker build . --tag=react-countries`
+    + `$ sudo docker run -d -p 80:80 react-countries`
 
 **Screenshots**
 ---
