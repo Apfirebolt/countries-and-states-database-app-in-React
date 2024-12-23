@@ -35,6 +35,10 @@ Just like you install majority of the Node powered front-end apps, three magic c
 **Screenshots**
 ---
 
+Country List page which displays all countries
+
+![Country_List](screenshots/countries.png)
+
 Country detail page which displays all the states of the given country.
 
 ![Countries_Logo](screenshots/states.png)
