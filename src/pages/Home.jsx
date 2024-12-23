@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import { FaPlus } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function HomePage() {
-  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("API to be called here");

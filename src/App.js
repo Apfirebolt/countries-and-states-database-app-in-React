@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className='container bg-orange-100'>
+        <div className='container mx-auto bg-light'>
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />

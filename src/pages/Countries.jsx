@@ -50,32 +50,35 @@ function Countries() {
       ) : (
         <div className="p-3">
           <p className="my-3 text-center text-3xl text-gray-700">Countries</p>
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="email"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              htmlFor="searchInput"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Search Country
             </label>
             <input
               type="text"
               id="searchInput"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search Countries here"
               onChange={(e) => setSearchText(e.target.value)}
               required
             />
           </div>
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {countries.length &&
               filterCountries().map((item, index) => (
-                <p
+                <div
                   key={index}
-                  className="text-gray-900 p-1 cursor-pointer shadow-2xl rounded bg-red-300 whitespace-no-wrap text-center"
+                  className="bg-dark text-light rounded-lg shadow-md p-4 dark:bg-gray-800 cursor-pointer"
                   onClick={() => goToCountryDetail(item.iso2, item.name)}
                 >
-                  {item.name}
-                </p>
+                  <h3 className="text-lg font-semibold">{item.name}</h3>
+                  <p>Capital: {item.capital}</p>
+                  <p>Currency: {item.currency}</p>
+                  <p>Phone Code: {item.phonecode}</p>
+                </div>
               ))}
           </div>
         </div>

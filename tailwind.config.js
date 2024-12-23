@@ -4,7 +4,14 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'light': '#F6F4F0',
+        'primary': '#D7BE79',
+        'secondary': '#4DA1A9',
+        'dark': '#2E5077',
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
