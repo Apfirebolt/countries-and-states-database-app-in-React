@@ -60,7 +60,7 @@ function CountryDetail() {
           <p className="my-3 text-center text-3xl text-gray-700">States for - {country}</p>
           <div className="mb-6">
             <label
-              htmlFor="searchInput"
+              for="searchInput"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Search State

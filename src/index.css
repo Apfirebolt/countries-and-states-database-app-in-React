@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Nunito', sans-serif;
+    background-color: #79D7BE;
 }
 
 @tailwind base;

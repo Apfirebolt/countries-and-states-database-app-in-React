@@ -52,7 +52,7 @@ function Countries() {
           <p className="my-3 text-center text-3xl text-gray-700">Countries</p>
           <div className="mb-6">
             <label
-              htmlFor="searchInput"
+              for="email"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Search Country

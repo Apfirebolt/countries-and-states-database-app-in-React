@@ -3,7 +3,7 @@ function Loader() {
   return (
     <div role="status" className="flex justify-center items-center my-3">
       <svg
-        className="inline mr-2 w-24 h-24 text-center text-gray-200 animate-spin dark:text-gray-600 fill-green-500"
+        className="inline mr-2 w-24 h-24 text-center text-light animate-spin dark:text-gray-600 fill-primary"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
