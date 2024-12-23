@@ -32,6 +32,11 @@ Just like you install majority of the Node powered front-end apps, three magic c
     + `$ sudo docker build . --tag=react-countries`
     + `$ sudo docker run -d -p 80:80 react-countries`
 
+
+**Updates**
+
+- 23rd December 2024 :- Added feature to show weather by implementing weather API.
+
 **Screenshots**
 ---
 

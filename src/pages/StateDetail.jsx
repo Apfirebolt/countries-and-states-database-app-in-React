@@ -7,6 +7,7 @@ function StateDetail() {
   const [cities, setCities] = useState([]);
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
+  const [weatherData, setWeatherData] = useState({});
   const [searchText, setSearchText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
@@ -35,6 +36,17 @@ function StateDetail() {
     }
   };
 
+  const getWeatherWithCoordinates = async (latitude, longitude) => {
+    const appId = process.env.REACT_APP_WEATHER_API_KEY;
+    const response = await httpClient.get(`${process.env.REACT_APP_WEATHER_URL}weather?lat=${latitude}&lon=${longitude}&appid=${appId}`, {
+      headers: headers,
+    });
+    if (response) {
+      console.log('Response is ', response);
+      setWeatherData(response);
+    }
+  };
+
   useEffect(() => {
     const currentState = localStorage.getItem('state');
     const currentCountry = localStorage.getItem('country');
@@ -60,7 +72,7 @@ function StateDetail() {
           <p className="my-3 text-center text-3xl text-gray-700">Cities for {state} in {country}</p>
           <div className="mb-6">
             <label
-              htmlFor="searchInput"
+              for="searchInput"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
               Search City
@@ -84,6 +96,12 @@ function StateDetail() {
                   <h3 className="text-lg font-semibold">{item.name}</h3>
                   <p>Latitude: {item.latitude}</p>
                   <p>Longitude: {item.longitude}</p>
+                  <button
+                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg mt-2"
+                    onClick={() => getWeatherWithCoordinates(item.latitude, item.longitude)}
+                  >
+                    Get Weather
+                  </button>
                 </div>
               ))}
           </div>
