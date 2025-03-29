@@ -38,8 +38,11 @@ function StateDetail() {
 
   const getWeatherWithCoordinates = async (latitude, longitude) => {
     const appId = process.env.REACT_APP_WEATHER_API_KEY;
-    const response = await httpClient.get(`${process.env.REACT_APP_WEATHER_URL}weather?lat=${latitude}&lon=${longitude}&appid=${appId}`, {
-      headers: headers,
+    const response = await httpClient.get(`https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_WEATHER_URL}weather?lat=${latitude}&lon=${longitude}&appid=${appId}`, {
+      headers: {
+        ...headers,
+        'Access-Control-Allow-Origin': '*',
+      },
     });
     if (response) {
       console.log('Response is ', response);

@@ -50,7 +50,7 @@ function Countries() {
         <Loader />
       ) : (
         <div className="p-3">
-          <p className="my-3 text-center text-3xl text-gray-700">Countries</p>
+          <p className="my-3 text-center text-3xl text-gray-700 bg-slate-100">Countries</p>
           <div className="mb-6">
             <label
               for="email"

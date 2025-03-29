@@ -1,15 +1,8 @@
-import { useEffect } from "react";
-
 function HomePage() {
 
-  useEffect(() => {
-    console.log("API to be called here");
-    // eslint-disable-next-line
-  }, []);
-
   return (
-    <div className="text-center py-3 px-5">
-      <p className="text-gray-700 text-bold text-3xl">Tech Stack</p>
+    <div className="text-center py-3 px-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+      <p className="text-white text-bold text-3xl">Tech Stack</p>
 
       <div className="w-48 my-6 mx-auto text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         <p
@@ -30,31 +23,33 @@ function HomePage() {
         
       </div>
 
-      <p className="text-blue-700 text-bold text-xl">
+      <div className="my-3 text-secondary px-3 py-5 bg-black rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <p className=" text-bold text-xl">
         This is an app to search for countries, states and cities of the world.
       </p>
 
-      <p className="text-blue-600 my-3 text-bold text-xl">
+      <p className=" my-3 text-bold text-xl">
         This uses this API to fetch relevant data 📄{" "}
         <a href="https://countrystatecity.in/docs">
           https://countrystatecity.in/docs
         </a>
       </p>
 
-      <p className="text-blue-500 my-3 text-bold text-xl">
+      <p className="my-3 text-bold text-xl">
         Ask a question related to this API here{" "}
         <a href="https://countrystatecity.in/faq/">
           https://countrystatecity.in/faq/
         </a>
       </p>
 
-      <p className="text-blue-400 my-3 text-bold text-xl">
+      <p className="my-3 text-bold text-xl">
         Please find Github link of this API here, don't forget to give it a star
         🌟{" "}
         <a href="https://github.com/dr5hn/countries-states-cities-database">
           https://github.com/dr5hn/countries-states-cities-database
         </a>
       </p>
+      </div>
     </div>
   );
 }
